@@ -10,11 +10,12 @@ phases:
       - echo "Nothing to build here as it's node!"    
   post_build:
     commands:
-
+      - aws --version
       - aws cloudformation package --template-file template.yaml 
                                         --s3-bucket $DeploymentBucketName
                                         --output-template-file output.yaml
                                         --region $AWS_DEFAULT_REGION
+  
 artifacts:
   type: zip
   files:
