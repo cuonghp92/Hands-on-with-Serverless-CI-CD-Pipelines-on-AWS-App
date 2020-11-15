@@ -10,6 +10,10 @@ phases:
       - echo "Nothing to build here as it's node!"    
   post_build:
     commands:
+      - pip3 uninstall -y awscli
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - unzip awscliv2.zip
+      - ./aws/install
       - aws --version
       - aws cloudformation package --template-file template.yaml 
                                         --s3-bucket $DeploymentBucketName
