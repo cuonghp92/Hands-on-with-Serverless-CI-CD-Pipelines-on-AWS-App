@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.1
 phases:
   install:
     runtime-versions:
@@ -10,6 +10,7 @@ phases:
       - echo "Nothing to build here as it's node!"    
   post_build:
     commands:
+
       - aws cloudformation package --template-file template.yaml 
                                         --s3-bucket $DeploymentBucketName
                                         --output-template-file output.yaml
