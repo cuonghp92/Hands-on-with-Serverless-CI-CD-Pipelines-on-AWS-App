@@ -16,9 +16,9 @@ phases:
       - ./aws/install
       - aws --version
       - aws cloudformation package --template-file template.yaml 
-                                        --s3-bucket $DeploymentBucketName
+                                        --s3-bucket codepipeline-us-west-1-788309214524
                                         --output-template-file output.yaml
-                                        --region $AWS_DEFAULT_REGION
+                                        --region us-west-1
   
 artifacts:
   type: zip
