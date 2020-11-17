@@ -6,6 +6,9 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs10.x
+      AutoPublishAlias: live
+      DeploymentPreference:
+        Type: Linear10PercentEvery2Minutes
       CodeUri: ./
       Events:
         MyTimeApi:
