@@ -16,18 +16,4 @@ Resources:
           Properties:
             Path: /
             Method: GET
-  HelloANnnn:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: index.handler
-      Runtime: nodejs10.x
-      AutoPublishAlias: live
-      DeploymentPreference:
-        Type: Linear10PercentEvery2Minutes
-      CodeUri: ./
-      Events:
-        MyTimeApi:
-          Type: Api
-          Properties:
-            Path: /
-            Method: GET
+  
